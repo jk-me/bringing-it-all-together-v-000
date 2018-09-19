@@ -10,8 +10,8 @@ attr_accessor :id, :name, :breed
   def self.create_table
     sql = <<-pie
       create table if not exists dogs (
-        id integer primary key
-        name text
+        id integer primary key,
+        name text,
         breed text)
       pie
     DB[:conn].execute(sql)
