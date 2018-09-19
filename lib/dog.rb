@@ -70,8 +70,8 @@ attr_accessor :id, :name, :breed
       dog_obj = Dog.new_from_db
     else
       hash = {
-              name: => name,
-              breed: => breed}
+              name: name,
+              breed: breed}
       Dog.create(hash)
     end
 
