@@ -25,20 +25,28 @@ attr_accessor :id, :name, :breed
     id = row[0]
     name = row[1]
     breed = row[2]
-    self.new(id,name,breed) 
-  end 
+    self.new(id,name,breed)
+  end
 
   def self.find_by_name(name)
     sql = "select * from dogs where name = ?"
     self.new_from_db(DB[:conn].execute(sql,name).first)
-  end 
+  end
 
   def update
+    sql = "update dogs set name = ? breed = ? where id = ?"
+    DB[:conn].execute(sql, self.name, self.breed, self.id)
+  end
 
-  end 
-
-  def save 
-
+  def save
+    if self.id 
+      self.update 
+    else 
+      sql <<-SQL 
+        insert into dogs(name, breed)
+        values (?, ?)   
+        SQL
+      DB[:conn].execute(sql,self.name, self.breed) 
   end
 
 end
