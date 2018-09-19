@@ -53,8 +53,8 @@ attr_accessor :id, :name, :breed
   end
 
   def self.create(hash)
-    x = self.new(hash[:id], hash[:name], hash[:breed])
+    x = self.new(hash)
     x.save
-  end 
+  end
 
 end
