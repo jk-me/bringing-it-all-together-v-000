@@ -22,10 +22,11 @@ attr_accessor :id, :name, :breed
   end
 
   def self.new_from_db(row)
-    id = row[0]
-    name = row[1]
-    breed = row[2]
-    self.new(id,name,breed)
+    hash = {}
+    hash[:id] = row[0]
+    hash[:name] = row[1]
+    hash[:breed] = row[2]
+    self.new(hash)
   end
 
   def self.find_by_name(name)
