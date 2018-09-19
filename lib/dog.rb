@@ -74,5 +74,6 @@ attr_accessor :id, :name, :breed
               breed: breed}
       Dog.create(hash)
     end
+  end
 
 end
