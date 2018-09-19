@@ -68,13 +68,11 @@ attr_accessor :id, :name, :breed
     if !dog.empty?
       d = dog[0]
       dog_obj = Dog.new_from_db
-    else 
-      hash = {id: => nil,
+    else
+      hash = {
               name: => name,
               breed: => breed}
       Dog.create(hash)
     end
 
 end
-
-
