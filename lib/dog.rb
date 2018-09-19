@@ -12,13 +12,13 @@ attr_accessor :id, :name, :breed
       create table if not exists dogs (
         id primary key integer
         name text
-        breed text
-      ) pie
-      DB[:conn].execute(sql)
-    end
+        breed text) 
+      pie
+    DB[:conn].execute(sql)
+  end
 
-    def self.drop_table
-      DB[:conn].execute('drop table if exists dogs')
-    end
+  def self.drop_table
+    DB[:conn].execute('drop table if exists dogs')
+  end
 
 end
