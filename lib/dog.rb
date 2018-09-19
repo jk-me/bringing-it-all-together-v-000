@@ -52,4 +52,9 @@ attr_accessor :id, :name, :breed
     self
   end
 
+  def self.create(hash)
+    x = self.new(hash[:id], hash[:name], hash[:breed])
+    x.save
+  end 
+
 end
