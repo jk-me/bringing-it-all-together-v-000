@@ -46,7 +46,8 @@ attr_accessor :id, :name, :breed
         insert into dogs(name, breed)
         values (?, ?)   
         SQL
-      DB[:conn].execute(sql,self.name, self.breed) 
+      DB[:conn].execute(sql,self.name, self.breed)
+    end 
   end
 
 end
