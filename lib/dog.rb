@@ -35,7 +35,7 @@ attr_accessor :id, :name, :breed
   end
 
   def update
-    sql = "update dogs set name = ? breed = ? where id = ?"
+    sql = "update dogs set name = ?, breed = ? where id = ?"
     DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
 
